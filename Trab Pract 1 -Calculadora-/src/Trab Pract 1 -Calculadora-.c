@@ -1,10 +1,10 @@
 /*
  ============================================================================
+ Name        :	TRABAJO PRACTICO NUMERO 1
+ Author      : Lucas Altamirano  DIV 1 E
 
- Author      : ALTAMIRANO LUCAS DIC 1 E
 
- 	 	 	 TRABAJO PRACTICO 1 " CALCULADORA !
-  Hacer una calculadora. Para ello el programa iniciará y contará con un menú de opciones:
+ Hacer una calculadora. Para ello el programa iniciará y contará con un menú de opciones:
  1. Ingresar 1er operando (A=x)
  2. Ingresar 2do operando (B=y)
  3. Calcular todas las operaciones
@@ -30,25 +30,26 @@
  ============================================================================
  */
 
-
 #include <stdio.h>
 #include <stdlib.h>
+#include "BibliotecaUtn.h"
+
 
 int main(void) {
 
 	setbuf(stdout, NULL);
 
-		int x;
-		int y;
-		int rInt;
-		float rFloat;
+	int x;
+	int y;
+	int rInt;
+	float rFloat;
 
-		int opcion;
+	int opcion;
+	int flagSalida;
 
+	flagSalida = 0;
 
-
-
-		do {
+	do {
 
 		printf("\n\tLa calculadora esta lista\n");
 
@@ -57,8 +58,9 @@ int main(void) {
 
 		printf("Ingresar 2do Operando\n");
 		scanf(" %d", &y);
+		flagSalida = 1;
 
-
+		do {
 			printf("\n------Eligir Operacion-----\n");
 			printf("1- Suma\n");
 			printf("2- Resta\n");
@@ -72,36 +74,53 @@ int main(void) {
 
 			switch (opcion) {
 			case 1:
-				printf("1- Suma\n");
 
+				rInt = Suma(x, y);
+
+				printf("\tla Suma de %d y %d es = %d", x, y, rInt);
 
 				break;
 
 			case 2:
-				printf("2- Resta\n");
+				rInt = Resta(x, y);
+				printf("\t la resta  de %d y %d es = %d", x, y, rInt);
+
 				break;
 
 			case 3:
-				printf("3- Multiplicacion \n");
+				rInt = Multiplicacion(x, y);
+				printf("\t la Multiplicacion de %d y %d es = %d", x, y, rInt);
+
 				break;
 			case 4:
 
-				printf("4- Division\n");
+				rFloat = Division(x, y);
+
+				if (rFloat == 0) {
+					printf("\tSyntax ERROR");
+				} else {
+					printf("\tla Multiplicacion de %d y %d es = %.2f", x, y,
+							rFloat);
+				}
+
 				break;
 			case 5:
 				//factorial
-				printf("5- Factorial\n");
+				rInt = factorialA(x);
+				printf("\t EL Factorial de %d es = %d", x, rInt);
+				rInt = factorialB(y);
+				printf("\t EL Factorial de %d es = %d", y, rInt);
 				break;
-
 
 			}
 
+		} while (flagSalida == 0); // si ,no salgo me pide otra operacion con mismos x ,y  ,.
 
-
-		}while(opcion);
-
-		return EXIT_SUCCESS;
-
+	} while (opcion);
 
 	return EXIT_SUCCESS;
-}
+
+} //  LLAVE FIN PROGRAMA GENERAL
+
+//// funciones ///
+
