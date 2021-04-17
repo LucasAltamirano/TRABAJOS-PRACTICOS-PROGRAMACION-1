@@ -1,0 +1,13 @@
+01:34:41 **** Incremental Build of configuration Debug for project Trabajo Practico 1 - calculadora ****
+Info: Internal Builder is used for build
+gcc -o "Trabajo Practico 1 - calculadora.exe" "src\\BibliotecasMenu.o" "src\\Calculos.o" "src\\Trabajo Practico 1 - calculadora.o" 
+c:/mingw/bin/../lib/gcc/mingw32/6.3.0/../../../../mingw32/bin/ld.exe: cannot open output file Trabajo Practico 1 - calculadora.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+01:38:19 **** Incremental Build of configuration Debug for project Trabajo Practico 1 - calculadora ****
+Info: Internal Builder is used for build
+gcc -o "Trabajo Practico 1 - calculadora.exe" "src\\BibliotecasMenu.o" "src\\Calculos.o" "src\\Trabajo Practico 1 - calculadora.o" 
+c:/mingw/bin/../lib/gcc/mingw32/6.3.0/../../../../mingw32/bin/ld.exe: cannot open output file Trabajo Practico 1 - calculadora.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+01:45:24 **** Incremental Build of configuration Debug for project Trabajo Practico 1 - calculadora ****
+Info: Internal Builder is used for build
+gcc -o "Trabajo Practico 1 - calculadora.exe" "src\\BibliotecasMenu.o" "src\\Calculos.o" "src\\Trabajo Practico 1 - calculadora.o" 

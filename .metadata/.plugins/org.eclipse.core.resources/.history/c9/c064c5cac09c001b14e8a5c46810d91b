@@ -1,0 +1,156 @@
+/*
+ ============================================================================
+ Name        :	TRABAJO PRACTICO NUMERO 1
+ Author      : Lucas Altamirano  DIV 1 E
+
+
+ Hacer una calculadora. Para ello el programa iniciará y contará con un menú de opciones:
+ 1. Ingresar 1er operando (A=x)
+ 2. Ingresar 2do operando (B=y)
+ 3. Calcular todas las operaciones
+ a) Calcular la suma (A+B)
+ b) Calcular la resta (A-B)
+ c) Calcular la division (A/B)
+ d) Calcular la multiplicacion (A*B)
+ e) Calcular el factorial (A!)
+ 4. Informar resultados
+ a) “El resultado de A+B es: r”
+ b) “El resultado de A-B es: r”
+ c) “El resultado de A/B es: r” o “No es posible dividir por cero”
+ d) “El resultado de A*B es: r”
+ e) “El factorial de A es: r1 y El factorial de B es: r2”
+ 5. Salir
+ • Todas las funciones matemáticas del menú se deberán realizar en una biblioteca aparte,
+ que contenga las funciones para realizar las cinco operaciones.
+ • En el menú deberán aparecer los valores actuales cargados en los operandos A y B
+ (donde dice “x” e “y” en el ejemplo, se debe mostrar el número cargado)
+ • Deberán contemplarse los casos de error (división por cero, etc)
+ • Documentar todas las funciones
+
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+#include "BibliotecaUtn.h"
+
+void Menu(); //Prototipo
+
+int main(void) {
+
+	setbuf(stdout, NULL);
+
+	Menu();
+
+	return EXIT_SUCCESS;
+
+}
+
+void Menu() {
+
+
+	int x;
+	int y;
+	int rInt;
+	float rFloat;
+
+	int opcion;
+	int flagOperador1;
+	int flagOperador2;
+
+	flagOperador1 = 0;
+	flagOperador2 = 0;
+
+	do {
+
+		printf("\n\tLa calculadora esta lista\n");
+
+		printf("1-Ingresar 1er Operando\n");
+		scanf(" %d", &x);
+
+		printf("2-Ingresar 2do Operando\n");
+		scanf(" %d", &y);
+
+		printf("3- Calcular");
+		printf("4- Mostrar todos los resultados ");
+		printf("5- Salir");
+
+
+
+			scanf("%d", &opcion);
+					switch (opcion) {
+					case 1:
+
+						printf("\n1- Ingrese el 1er Operando (A)");
+						scanf("%d", &x);
+						printf("\n1- A=%d", x);
+						flagOperador1 = 1;
+						break;
+
+					case 2:
+						if (flagOperador1 == 1) {
+							printf("\n1- Ingrese el 2do Operando (B)");
+							scanf("%d", &y);
+							printf("\n1- B=%d", y);
+							flagOperador2= 1;
+						} else {
+							printf(
+									"\n Primero tiene que ingresar el 1er (A) Operando en opcion 1 ");
+						}
+
+						break;
+
+					case 3:
+						if (flagOperador1 == 1 && flagOperador2 == 1) {
+							printf("\n.Calculando.......\n ");
+
+							printf(" Suma de  (%d+%d)\n",x,y);
+							rInt = Suma(x, y);
+							printf(" Resta  de  (%d+%d)\n",x,y);
+							rInt = Resta(x, y);
+							printf(" division  de (%d+%d)\n",x,y);
+							rFloat = Division(x, y);
+							printf(" Multiplicacion  de (%d+%d)\n",x,y);
+							rInt = Multiplicacion(x, y);
+							printf(" Factorial (%d)",x);
+							rInt =factorialA(x);
+							rInt= factorialB(y);
+
+						} else {
+							printf("debera ingresar los dos operandos de forma corrrecta ");
+						}
+						bandera3=1;
+
+						break;
+					case 4:
+						if(bandera3==1){
+
+
+						printf(" El resultado de A+B es: %d\n", rInt);
+
+						printf(" El resultado de A-B es: %d\n", rInt);
+
+
+						printf(" El resultado de A/B es: %2.f\n", rFloat);
+
+						printf(" El resultado de A*B es: %d\n", rInt);
+
+						printf(" El resultado de Factorial A  es: %d y  Factorial B  es: %d\n",rInt, rInt);
+						}
+						else {
+							printf(" Para Mostrar los resultados , primero es necesario Calcular en Opcion #3");
+						}
+						break;
+
+					}
+
+				} while (opcion != 5);
+
+
+			}
+
+
+
+
+} //  LLAVE FIN PROGRAMA GENERAL
+
