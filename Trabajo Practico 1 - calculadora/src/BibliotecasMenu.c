@@ -34,7 +34,7 @@ void Menu() {
 
 	printf("\n\tLa calculadora esta lista para operar\n");
 
-	printf("\natencion! esta calculadora fue diseñada para programar solo con numeros enteros,a excepcion del resultado de la division\n");
+	printf("\nATENCION! calculadora  diseñada para utilizar solo con numeros enteros,\n");
 	do {
 
 		printf("\n1-Ingresar 1er Operando\n");
