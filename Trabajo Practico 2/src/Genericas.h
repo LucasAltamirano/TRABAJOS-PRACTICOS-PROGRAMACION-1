@@ -19,7 +19,18 @@
 
 
 void desplegarMenu();
+
+/** \brief desplegarMenu de tipo Void
+ * \ Utiliza la funcion print para desplegar un menu acorde a las necesidades
+*
+*/
+
 int utn_levantaCadenaCaracteres(char cadena[], char *mensaje,char *mensajeError, int largoCadena);
+/**
+ * \brief valida que la cadena obtenida es FLOTANTE
+ * \param cadena es un puntero al espacio de memoria donde se dejara el resultado de la funcion
+ * return Retorna 0 si el numero es flotante, -1, SI ES ERROR.
+ */
 
 int getInt(int *pResultado, char *mensaje, char *mensajeError, int min, int max,int reintentos);
 

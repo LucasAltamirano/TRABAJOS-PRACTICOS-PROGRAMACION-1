@@ -14,17 +14,17 @@
 
 
 
-int inicializarCadenaCaracteres(char cadenaRecibida[], int largoCadena) {
-	int exito = 0;
-	int i;
-	if (cadenaRecibida != NULL) {
-		for (i = 0; i < largoCadena; i++) {
-			cadenaRecibida[i] = ' ';
+	int inicializarCadenaCaracteres(char cadenaRecibida[], int largoCadena) {
+		int exito = 0;
+		int i;
+		if (cadenaRecibida != NULL) {
+			for (i = 0; i < largoCadena; i++) {
+				cadenaRecibida[i] = ' ';
+			}
+			exito = 1;
 		}
-		exito = 1;
+		return exito;
 	}
-	return exito;
-}
 void desplegarMenu() {
 	printf("\tBIENVENIDOS AL SOFTWARE DE EMPLEADOS \n"
 			"|1|Alta de Empleados\n"
@@ -57,8 +57,7 @@ int getInt(int *pResultado, char *mensaje, char *mensajeError, int min, int max,
 	}
 	return exito;
 }
-int utn_levantaCadenaCaracteres(char cadena[], char *mensaje,
-		char *mensajeError, int largoCadena) {
+int utn_levantaCadenaCaracteres(char cadena[], char *mensaje,char *mensajeError, int largoCadena) {
 	int exito = 0;
 	int i;
 	char auxCadena[largoCadena];

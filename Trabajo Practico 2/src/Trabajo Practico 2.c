@@ -54,7 +54,7 @@ int main(void) {
 					asignacionIdEmployee++;
 					contadorEmpleado++;
 				} else {
-					printf("Error en la carga de datos, vuelva a intentarlo");
+					printf("Error en la carga de datos, vuelva a intentarlo\n");
 				}
 			}
 			break;
@@ -67,7 +67,7 @@ int main(void) {
 			if(contadorEmpleado>0){
 			removeEmployee(employee, QTYEMPLEADOS);
 			contadorEmpleado--;
-			}else{printf("No existen empleados para remover");
+			}else{printf("No existen empleados para remover\n");
 			}
 			break;
 		case 4:
@@ -77,7 +77,7 @@ int main(void) {
 				printEmployees(employee, QTYEMPLEADOS);
 
 			}else{
-				printf("No hay empleados para Mostrar en el sistema");
+				printf("No hay empleados para Mostrar en el sistema\n");
 			}
 			break;
 

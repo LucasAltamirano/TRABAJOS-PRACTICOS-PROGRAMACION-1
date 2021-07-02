@@ -103,7 +103,7 @@ void modificacionDatos(sEmployee estructurasRecibidas[], int limitstruct) {
 
 				flagIdExistente = 1;
 				break;
-;
+
 			}
 
 		}
@@ -152,6 +152,8 @@ void modificacionDatos(sEmployee estructurasRecibidas[], int limitstruct) {
 				printf("Modificacion de datos cancelado por el usuario\n");
 
 			}
+		}else{
+			printf("Id Inexistente verifique\n");
 		}
 	}
 
