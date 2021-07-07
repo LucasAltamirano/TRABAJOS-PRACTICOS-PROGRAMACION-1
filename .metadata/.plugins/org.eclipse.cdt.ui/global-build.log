@@ -1,13 +1,8 @@
-01:34:41 **** Incremental Build of configuration Debug for project Trabajo Practico 1 - calculadora ****
+21:26:44 **** Incremental Build of configuration Debug for project tp3_windows - copia ****
 Info: Internal Builder is used for build
-gcc -o "Trabajo Practico 1 - calculadora.exe" "src\\BibliotecasMenu.o" "src\\Calculos.o" "src\\Trabajo Practico 1 - calculadora.o" 
-c:/mingw/bin/../lib/gcc/mingw32/6.3.0/../../../../mingw32/bin/ld.exe: cannot open output file Trabajo Practico 1 - calculadora.exe: Permission denied
-collect2.exe: error: ld returned 1 exit status
-01:38:19 **** Incremental Build of configuration Debug for project Trabajo Practico 1 - calculadora ****
-Info: Internal Builder is used for build
-gcc -o "Trabajo Practico 1 - calculadora.exe" "src\\BibliotecasMenu.o" "src\\Calculos.o" "src\\Trabajo Practico 1 - calculadora.o" 
-c:/mingw/bin/../lib/gcc/mingw32/6.3.0/../../../../mingw32/bin/ld.exe: cannot open output file Trabajo Practico 1 - calculadora.exe: Permission denied
-collect2.exe: error: ld returned 1 exit status
-01:45:24 **** Incremental Build of configuration Debug for project Trabajo Practico 1 - calculadora ****
-Info: Internal Builder is used for build
-gcc -o "Trabajo Practico 1 - calculadora.exe" "src\\BibliotecasMenu.o" "src\\Calculos.o" "src\\Trabajo Practico 1 - calculadora.o" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o parser.o "..\\parser.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Controller.o "..\\Controller.c" 
+gcc "-LC:\\Users\\Lucas\\Desktop\\Entorno Eclipse\\TRABAJOS-PRACTICOS-PROGRAMACION-1\\tp3_windows - copia" -o "tp3_windows - copia.exe" ".metadata\\.plugins\\org.eclipse.cdt.make.core\\specs.o" Controller.o Employee.o Genericas.o main.o parser.o -lLinkedList 
+Info: Nothing to build for tp3_windows - copia
+Info: Nothing to build for tp3_windows - copia
+Info: Nothing to build for tp3_windows - copia

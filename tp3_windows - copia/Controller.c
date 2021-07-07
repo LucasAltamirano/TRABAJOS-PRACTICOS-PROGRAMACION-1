@@ -59,6 +59,31 @@ int controller_loadFromBinary(char *path, LinkedList *pArrayListEmployee) {
 	return E;
 }
 
+/*
+ {
+	int retorno = -1;
+	int registros;
+	FILE *file;
+
+	file = fopen(path,"rb");
+
+	ll_clear(pArrayListEmployee);
+
+	if(file != NULL)
+	{
+		registros = parser_EmployeeFromBinary(file,pArrayListEmployee);
+		if (registros)
+		{
+			retorno = 0;
+			fclose(file);
+		}
+	}
+
+	return retorno;
+}
+
+
+ */
 /** \brief Alta de empleados
  *
  * \param path char*
@@ -649,36 +674,26 @@ int controller_sortEmployee(LinkedList *pArrayListEmployee) {
 	 */
 	int controller_saveAsBinary(char *path, LinkedList *pArrayListEmployee) {
 
-		FILE *punteroFileBinario;
-		Employee *punteroBuffer;
-		int cantNodos;
-		int i;
-		int bufferId;
-		char bufferNombre[128];
-		int bufferHsTrabajo;
-		int bufferSueldo;
 		int E = 0;
+		FILE *  punteroArchivo;
+		punteroArchivo = fopen(path, "wb");
 
-		punteroFileBinario = fopen(path, "wb");
-		cantNodos = ll_len(pArrayListEmployee);
+		if (punteroArchivo != NULL && !ll_isEmpty(pArrayListEmployee)) {
 
-		if (punteroFileBinario != NULL
-				&& cantNodos > 0&& pArrayListEmployee!=NULL && path!=NULL) {
-			E = 1;
-			fprintf(punteroFileBinario, "id,nombre,horasTrabajadas,sueldo\n");
-			for (i = 0; i < cantNodos; i++) {
+			for (int i = 0; i < ll_len(pArrayListEmployee); i++) {
+				Employee * punterofile = ll_get(pArrayListEmployee, i);
+				if (punterofile != NULL) {
+					Employee auxiliar = *(punterofile);
 
-				punteroBuffer = ll_get(pArrayListEmployee, i);
-				employee_getId(punteroBuffer, &bufferId);
-				employee_getNombre(punteroBuffer, bufferNombre);
-				employee_getHorasTrabajadas(punteroBuffer, &bufferHsTrabajo);
-				employee_getSueldo(punteroBuffer, &bufferSueldo);
-				fprintf(punteroFileBinario, "%d,%s,%d,%d\n", bufferId,
-						bufferNombre, bufferHsTrabajo, bufferSueldo);
+					fwrite(&auxiliar, sizeof(Employee), 1, punteroArchivo);
+
+				}
 
 			}
-			fclose(punteroFileBinario);
+			E = 1;
+
 		}
+		fclose(punteroArchivo);
 		return E;
 	}
 
